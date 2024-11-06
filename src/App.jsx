@@ -1,35 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// App.jsx
+
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+import ProductPage from './pages/ProductPage';
+import './styles/index.css';
+
+// Carga de la clave pública de Stripe
+const stripePromise = loadStripe('YOUR_PUBLISHABLE_KEY'); // Reemplaza 'YOUR_PUBLISHABLE_KEY' con tu clave pública de Stripe
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Elements stripe={stripePromise}>
+      <Router>
+        <Routes>
+          <Route path="/" element={<ProductPage />} />
+        </Routes>
+      </Router>
+    </Elements>
+  );
 }
 
-export default App
+export default App;

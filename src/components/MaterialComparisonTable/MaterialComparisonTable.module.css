@@ -1,0 +1,32 @@
+.tableContainer {
+    padding: 2rem; /* Match padding with other components */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.comparisonTable {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center; /* Center text in table */
+}
+
+.comparisonTable th,
+.comparisonTable td {
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1rem;
+    color: #333;
+    text-align: center; /* Center text within cells */
+    vertical-align: middle; /* Center content vertically */
+}
+
+.comparisonTable th {
+    font-weight: bold;
+}
+
+.comparisonTable tbody tr:last-child td {
+    border-bottom: none; /* Remove border from last row */
+}

@@ -1,0 +1,43 @@
+/* SwitchTypeSelector.module.css */
+.switchTypeSelector {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 2rem;
+    border-top: 1px solid #ddd;
+}
+
+.switchTypeSelector h3 {
+    font-size: 1rem;
+    font-weight: normal;
+    color: #333;
+    margin: 0;
+}
+
+.buttonContainer {
+    display: flex;
+    gap: 10px;
+}
+
+.switchButton {
+    padding: 10px 15px; /* Ensures consistent padding */
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: white;
+    color: #333;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s, color 0.3s;
+    flex: 1; /* Makes buttons take equal space */
+    min-width: 120px; /* Adjust to match Material button size */
+    text-align: center;
+}
+
+.switchButton:hover {
+    background-color: #f0f0f0;
+}
+
+.active {
+    background-color: #333;
+    color: white;
+}

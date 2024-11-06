@@ -1,0 +1,116 @@
+/* Cart.module.css */
+.cartContainer {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: #333;
+}
+
+.cartItems {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-top: 1px solid #ddd;
+}
+
+.cartItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 1rem 0;
+}
+
+.itemInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.itemName {
+    font-weight: bold;
+    font-size: 2.2rem;
+    color: #333;
+}
+
+.itemDetails {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.itemActions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+}
+
+.itemPrice {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    padding-right: 1.1rem;
+}
+
+/* Estilo para el control de cantidad */
+.quantityControl {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.decreaseButton, .increaseButton {
+    padding: 0.3rem 0.8rem;
+    background-color:transparent;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 1rem;
+}
+
+.decreaseButton:hover, .increaseButton:hover {
+    background-color: #e0e0e0;
+}
+
+.quantity {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.removeButton {
+    font-size: 0.9rem;
+    color: #666;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-top: 1.7rem;
+}
+
+.totalContainer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    padding-right: 1.1rem;
+    padding-top: 1rem;
+}
+
+.checkoutButton {
+    padding: 0.8rem;
+    background-color: #7a3e00; /* Color marrón del botón */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
+}
+
+.checkoutButton:hover {
+    background-color: #5a2c00; /* Color marrón más oscuro para el hover */
+}
+

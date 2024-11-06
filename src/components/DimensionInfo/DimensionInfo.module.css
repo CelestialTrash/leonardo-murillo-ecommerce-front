@@ -1,0 +1,41 @@
+.dimensionInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem; /* Consistent padding with other components */
+    border-top: 1px solid #ddd; /* Optional separator for consistency */
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    padding-left: 1rem; /* Align with other component's padding */
+    padding-right: 1rem; /* Align with other component's padding */
+}
+
+.tabs h4 {
+    margin: 0;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: normal;
+    color: #333;
+    flex: 1; /* Ensure tabs take equal space */
+    text-align: center; /* Center-align the tab titles */
+}
+
+.activeTab {
+    font-weight: bold;
+    border-bottom: 2px solid black; /* Highlight active tab */
+    color: #333;
+}
+
+.content {
+    padding: 1rem 1rem; /* Consistent padding with other component's content */
+    color: #333;
+}
+
+.tabContent {
+    display: block;
+    padding-left: 1rem; /* Align content with previous components */
+    padding-right: 1rem; /* Align content with previous components */
+}

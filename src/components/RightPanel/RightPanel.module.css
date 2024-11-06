@@ -1,0 +1,24 @@
+/* RightPanel.module.css */
+.rightPanel {
+    background-color: white;
+    width: 28vw; /* Ajusta el ancho al 30% de la ventana */
+    height: 100vh; /* Asegura que ocupe el alto completo */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    overflow-y: auto; /* Permite scroll interno si es necesario */
+}
+
+/* Mobile Styles */
+@media (max-width: 767px) {
+    .rightPanel {
+        width: 100vw; /* Full width on mobile */
+        padding: 1rem; /* Reduced padding for smaller screens */
+        gap: 1rem; /* Adjusted gap between elements */
+        box-shadow: none; /* Remove shadow for simplicity on mobile */
+        overflow-y: auto; /* Permite scroll interno si es necesario */
+    }
+
+}

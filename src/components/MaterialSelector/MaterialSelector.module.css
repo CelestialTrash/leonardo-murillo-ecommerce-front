@@ -1,0 +1,62 @@
+/* MaterialSelector.module.css */
+.materialSelector {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 2rem; /* Ensure padding is consistent with ProductInfo */
+    border-top: 1px solid #ddd;
+}
+
+.materialSelector h3 {
+    font-size: 1rem;
+    font-weight: normal;
+    color: #333;
+    margin: 0;
+}
+
+.buttonContainer {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.materialButton {
+    flex-basis: 50%; /* Each button takes up half of the container width */
+    min-width: 0; /* Prevents overflow */
+    padding: 10px 0; /* Same vertical padding for all */
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: white;
+    color: #333;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.materialButton:hover {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.active {
+    background-color: #333;
+    color: white;
+}
+
+.materialLink {
+    font-size: 0.9rem;
+    color: #333;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Ensure consistent alignment with ProductInfo */
+.alignedSection {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+

@@ -1,0 +1,37 @@
+/* CartButton.module.css */
+.cartButton {
+    width: 50px;
+    height: 50px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    margin-top: 1.2rem;
+    top:0; /* Alineado con la parte superior */
+    right: 2rem; /* Alinea el padding horizontal con otros componentes */
+}
+
+.cartIcon {
+    width: 28px;
+    height: 28px;
+    
+}
+
+.itemCount {
+    position: absolute;
+    top: 2px;
+    right: -2px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    padding: 0.2rem 0.4rem;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 10px;
+    height: 15px;
+}

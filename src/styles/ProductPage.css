@@ -1,0 +1,55 @@
+/* ProductPage.css */
+
+/* Layout general */
+.product-page-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.carousel-container {
+    flex: 0 0 70vw;
+    position: relative;
+}
+
+.rightPanel {
+    flex: 1;
+    overflow-y: auto; /* Permite scroll solo dentro del RightPanel */
+    height: 100vh;
+    padding: 2rem;
+    position: relative;
+}
+
+/* Contenedor sticky para ProductInfo y CartButton */
+.sticky-header {
+    position: sticky;
+    top: 0; /* Se mantiene en la parte superior del RightPanel */
+    z-index: 10; /* Asegura que esté encima de otros elementos */
+    background-color: white; /* Fondo para evitar solapamiento visual */
+    display: flex;
+    justify-content: space-between; /* Alinea ProductInfo y CartButton */
+    padding-right: 2rem; /* Alineación horizontal uniforme */
+}
+
+/* Mobile Styles */
+@media (max-width: 767px) {
+    .product-page-container {
+        flex-direction: column;
+        height: auto;
+        overflow-y: hidden;
+    }
+
+    .carousel-container {
+        width: 100vw;
+        height: 50vh;
+    }
+
+    .rightPanel {
+        width: 100vw;
+        padding: 1rem;
+        gap: 1rem;
+        overflow-y: auto;
+        max-height: 50vh;
+    }
+}

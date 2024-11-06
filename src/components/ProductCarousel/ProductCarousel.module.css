@@ -1,0 +1,44 @@
+/* ProductCarousel.module.css */
+
+/* Contenedor del carrusel */
+.carouselContainer {
+    width: 70vw; /* Ancho completo de la ventana */
+    height: 100vh; /* Alto completo de la ventana */
+    position: relative;
+    overflow: hidden; /* Evita cualquier desbordamiento */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0; /* Elimina cualquier margen en el contenedor */
+}
+
+/* Configuración de cada slide */
+.slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ocupa el ancho completo del contenedor */
+    height: 100%; /* Ocupa el alto completo del contenedor */
+}
+
+/* Configuración de la imagen dentro de cada slide */
+.image {
+    width: 100vw; /* Ocupa el ancho de la ventana */
+    height: 100vh; /* Ocupa el alto de la ventana */
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    overflow: hidden; /* Asegura que el contenido extra se recorte */
+}
+
+@media (max-width: 767px) {
+    .carouselContainer {
+        width: 100vw; /* Full width on mobile */
+        height: 50vh; /* Adjust height for mobile */
+        overflow: hidden;
+    }
+
+    .image {
+        width: 100vw; /* Full width */
+        height: 50vh; /* Match container height */
+        object-fit: cover;
+    }
+}
