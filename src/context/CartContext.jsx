@@ -10,38 +10,55 @@ export const CartProvider = ({ children }) => {
       const existingItem = prev.find(
         (i) =>
           i.id === item.id &&
-          i.material === item.material &&
-          i.color === item.color &&
-          i.switchType === item.switchType
+          i.material === normalizeValue(item.material) &&
+          i.color === normalizeValue(item.color) &&
+          i.switchType === normalizeValue(item.switchType)
       );
+
+      const validPrice = typeof item.price === 'number' && item.price > 0 ? item.price : 0;
+
       if (existingItem) {
         return prev.map((i) =>
           i.id === item.id &&
-          i.material === item.material &&
-          i.color === item.color &&
-          i.switchType === item.switchType
+          i.material === normalizeValue(item.material) &&
+          i.color === normalizeValue(item.color) &&
+          i.switchType === normalizeValue(item.switchType)
             ? { ...i, quantity: i.quantity + 1 }
             : i
         );
       }
+
       return [
         ...prev,
         {
           ...item,
-          material: item.material || "N/A",
-          color: item.color || "N/A",
-          switchType: item.switchType || "N/A",
+          material: normalizeValue(item.material),
+          color: normalizeValue(item.color),
+          switchType: normalizeValue(item.switchType),
+          price: validPrice,
           quantity: 1,
         },
       ];
     });
   };
 
+  const normalizeValue = (value) => {
+    if (typeof value === 'object' && value !== null) {
+      return value.name || value.title || 'N/A'; // Extract a name or title if it's an object
+    }
+    return typeof value === 'string' ? value : 'N/A'; // Ensure it's a string
+  };
+
   const removeItem = (item) => {
     setCartItems((prev) =>
       prev.filter(
         (i) =>
-          !(i.id === item.id && i.material === item.material && i.color === item.color && i.switchType === item.switchType)
+          !(
+            i.id === item.id &&
+            i.material === normalizeValue(item.material) &&
+            i.color === normalizeValue(item.color) &&
+            i.switchType === normalizeValue(item.switchType)
+          )
       )
     );
   };
@@ -50,9 +67,9 @@ export const CartProvider = ({ children }) => {
     setCartItems((prev) =>
       prev.map((i) =>
         i.id === item.id &&
-        i.material === item.material &&
-        i.color === item.color &&
-        i.switchType === item.switchType
+        i.material === normalizeValue(item.material) &&
+        i.color === normalizeValue(item.color) &&
+        i.switchType === normalizeValue(item.switchType)
           ? { ...i, quantity: i.quantity + 1 }
           : i
       )
@@ -64,9 +81,9 @@ export const CartProvider = ({ children }) => {
       prev.reduce((acc, i) => {
         if (
           i.id === item.id &&
-          i.material === item.material &&
-          i.color === item.color &&
-          i.switchType === item.switchType
+          i.material === normalizeValue(item.material) &&
+          i.color === normalizeValue(item.color) &&
+          i.switchType === normalizeValue(item.switchType)
         ) {
           if (i.quantity > 1) {
             acc.push({ ...i, quantity: i.quantity - 1 });
@@ -76,6 +93,14 @@ export const CartProvider = ({ children }) => {
         }
         return acc;
       }, [])
+    );
+  };
+
+  const updateItemPrice = (itemId, newPrice) => {
+    setCartItems((prev) =>
+      prev.map((item) =>
+        item.id === itemId ? { ...item, price: newPrice } : item
+      )
     );
   };
 
@@ -93,6 +118,7 @@ export const CartProvider = ({ children }) => {
         removeItem,
         increaseQuantity,
         decreaseQuantity,
+        updateItemPrice,
         cartItemCount,
         getTotalPrice,
       }}

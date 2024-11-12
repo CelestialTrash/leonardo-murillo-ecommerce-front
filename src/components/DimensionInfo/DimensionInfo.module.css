@@ -3,7 +3,7 @@
     flex-direction: column;
     gap: 1rem;
     padding: 2rem; /* Consistent padding with other components */
-    border-top: 1px solid #ddd; /* Optional separator for consistency */
+    
 }
 
 .tabs {

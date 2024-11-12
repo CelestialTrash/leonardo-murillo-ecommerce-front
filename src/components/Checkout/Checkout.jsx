@@ -3,9 +3,9 @@ import { CartContext } from '../../context/CartContext';
 import { loadStripe } from '@stripe/stripe-js';
 import styles from './Checkout.module.css';
 
-// Load Stripe public key from environment variables
-const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY_TEST);
-console.log("Public Key loaded:", import.meta.env.VITE_STRIPE_PUBLIC_KEY);
+// Cambia manualmente entre TEST y LIVE aquí
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY_TEST); // Cambia a VITE_STRIPE_PUBLIC_KEY_LIVE cuando sea necesario
+console.log("Using Test Mode Key for Stripe Initialization:", import.meta.env.VITE_STRIPE_PUBLIC_KEY_TEST);
 
 const Checkout = ({ onCancel }) => {
   const { cartItems, getTotalPrice } = useContext(CartContext);
@@ -23,38 +23,47 @@ const Checkout = ({ onCancel }) => {
   };
 
   const handlePlaceOrder = async () => {
-    console.log("Cart Items being sent to backend:", cartItems); // Verifica que aquí llegan los datos correctos
+    console.log("Cart Items being sent to backend:", cartItems);
     console.log("Form Data being sent:", formData);
-  
+
+    if (formData.city.toLowerCase() !== 'new york' || formData.state.toLowerCase() !== 'ny') {
+      setError('Shipping is only available to New York.');
+      return;
+    }
+
     try {
       const stripe = await stripePromise;
-  
+
       const response = await fetch("http://localhost:5000/api/stripe/create-checkout-session", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          cartItems: cartItems.map(item => ({
+          cartItems: cartItems.map((item) => ({
             name: item.name,
             material: item.material,
             color: item.color,
             switchType: item.switchType,
-            price: Math.round(item.price * 100),
+            price: item.price,
             quantity: item.quantity,
           })),
           formData,
-          totalPrice: Math.round(getTotalPrice() * 100),
         }),
       });
-  
-      const { id } = await response.json();
+
+      const { id, error: sessionError } = await response.json();
+      if (sessionError) {
+        setError(sessionError);
+        return;
+      }
+
       await stripe.redirectToCheckout({ sessionId: id });
     } catch (error) {
       console.error("Error creating checkout session:", error);
+      setError("No se pudo crear la sesión de pago. Inténtalo nuevamente.");
     }
   };
-  
 
   return (
     <div className={styles.checkoutContainer}>
@@ -63,10 +72,10 @@ const Checkout = ({ onCancel }) => {
         {cartItems.map((item, index) => (
           <div key={`${item.id}-${index}`} className={styles.orderItem}>
             <span>{item.name} ({item.material || 'N/A'}, {item.color || 'N/A'}, {item.switchType || 'N/A'})</span>
-            <span>{item.quantity} x ${item.price.toFixed(2)}</span>
+            <span>{item.quantity} x ${(item.price ?? 0).toFixed(2)}</span>
           </div>
         ))}
-        <div className={styles.totalPrice}>Total: ${getTotalPrice().toFixed(2)}</div>
+        <div className={styles.totalPrice}>Total: ${(getTotalPrice() ?? 0).toFixed(2)}</div>
       </div>
       <form className={styles.checkoutForm}>
         <input

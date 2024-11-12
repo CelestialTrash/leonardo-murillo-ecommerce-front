@@ -3,18 +3,18 @@ import React, { useState, useEffect } from 'react';
 import styles from './MaterialSelector.module.css';
 
 const MaterialSelector = ({ materials, onMaterialSelect }) => {
-  const [selectedMaterial, setSelectedMaterial] = useState(materials[0]);
+  const [selectedMaterial, setSelectedMaterial] = useState(materials[0]?.material || '');
 
   useEffect(() => {
     if (materials.length > 0) {
-      setSelectedMaterial(materials[0]);
-      onMaterialSelect(materials[0]); // Notify initial selection with just the material name
+      setSelectedMaterial(materials[0].material);
+      onMaterialSelect(materials[0]); // Pass full object {material, price}
     }
   }, [materials, onMaterialSelect]);
 
   const handleMaterialChange = (material) => {
-    setSelectedMaterial(material);
-    onMaterialSelect(material); // Pass only the material name
+    setSelectedMaterial(material.material);
+    onMaterialSelect(material); // Pass the selected material object
   };
 
   return (
@@ -23,13 +23,13 @@ const MaterialSelector = ({ materials, onMaterialSelect }) => {
       <div className={styles.buttonContainer}>
         {materials.map((material) => (
           <button
-            key={material}
+            key={material.material}
             onClick={() => handleMaterialChange(material)}
             className={`${styles.materialButton} ${
-              selectedMaterial === material ? styles.active : ''
+              selectedMaterial === material.material ? styles.active : ''
             }`}
           >
-            {material}
+            {material.material}
           </button>
         ))}
       </div>
@@ -39,4 +39,3 @@ const MaterialSelector = ({ materials, onMaterialSelect }) => {
 };
 
 export default MaterialSelector;
-

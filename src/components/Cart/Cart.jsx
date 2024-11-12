@@ -13,13 +13,17 @@ const Cart = ({ onCheckout }) => {
         {cartItems.map((item, index) => (
           <div key={`${item.id}-${index}`} className={styles.cartItem}>
             <div className={styles.itemInfo}>
-              <span className={styles.itemName}>{item.name}</span>
+              <span className={styles.itemName}>{item.name || 'Unnamed Item'}</span>
               <span className={styles.itemDetails}>
-                ({item.material}, {item.color}, {item.switchType})
+                ({typeof item.material === 'string' ? item.material : 'N/A'}, 
+                {typeof item.color === 'string' ? item.color : 'N/A'}, 
+                {typeof item.switchType === 'string' ? item.switchType : 'N/A'})
               </span>
             </div>
             <div className={styles.itemActions}>
-              <span className={styles.itemPrice}>${item.price.toFixed(2)}</span>
+              <span className={styles.itemPrice}>
+                ${(item.price * item.quantity).toFixed(2)}
+              </span>
               <div className={styles.quantityControl}>
                 <button onClick={() => decreaseQuantity(item)} className={styles.decreaseButton}>
                   -
