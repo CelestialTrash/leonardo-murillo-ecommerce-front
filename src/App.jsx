@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import ProductPage from './pages/ProductPage';
+import SuccessPage from './pages/SuccessPage';
+import CancelPage from './pages/CancelPage';
 import './styles/index.css';
 
 // Carga de la clave pública de Stripe
@@ -16,6 +18,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<ProductPage />} />
+          <Route path="/success" element={<SuccessPage />} />
+        <Route path="/cancel" element={<CancelPage />} />
         </Routes>
       </Router>
     </Elements>
