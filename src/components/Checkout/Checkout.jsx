@@ -34,7 +34,7 @@ const Checkout = ({ onCancel }) => {
     try {
       const stripe = await stripePromise;
 
-      const response = await fetch("https://leonardo-murillo-backend-16f98itvr-leonardos-projects-64997112.vercel.app/api/stripe/create-checkout-session", {
+      const response = await fetch("https://leonardo-murillo-backend.vercel.app/api/stripe/create-checkout-session", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
