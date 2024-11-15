@@ -4,8 +4,25 @@ import { loadStripe } from '@stripe/stripe-js';
 import styles from './Checkout.module.css';
 
 // Cambia manualmente entre TEST y LIVE aquí
-const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY); // Cambia a VITE_STRIPE_PUBLIC_KEY_LIVE cuando sea necesario
-/* console.log("Using Test Mode Key for Stripe Initialization:", import.meta.env.VITE_STRIPE_PUBLIC_KEY_TEST); */
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY); 
+
+const validCities = [
+  "new york", "manhattan", "harlem", "inwood", "washington heights", 
+  "upper east side", "upper west side", "midtown", "chelsea", "tribeca",
+  "soho", "east village", "west village", "financial district",
+  "brooklyn", "williamsburg", "dumbo", "greenpoint", "bedford-stuyvesant", 
+  "bushwick", "park slope", "prospect heights", "cobble hill", 
+  "red hook", "flatbush", "sunset park", "bay ridge",
+  "queens", "astoria", "long island city", "sunnyside", "woodside", 
+  "jackson heights", "elmhurst", "flushing", "jamaica", "forest hills",
+  "corona", "rego park", "bayside", "college point",
+  "bronx", "south bronx", "riverdale", "throgs neck", 
+  "mott haven", "fordham", "kingsbridge", "pelham bay",
+  "woodlawn", "hunt point", "morissania",
+  "staten island", "st. george", "todt hill", "great kills", 
+  "new dorp", "tottenville", "port richmond", "mariners harbor", 
+  "west brighton", "stapleton", "midland beach"
+];
 
 const Checkout = ({ onCancel }) => {
   const { cartItems, getTotalPrice } = useContext(CartContext);
@@ -23,11 +40,13 @@ const Checkout = ({ onCancel }) => {
   };
 
   const handlePlaceOrder = async () => {
-    /* console.log("Cart Items being sent to backend:", cartItems);
-    console.log("Form Data being sent:", formData); */
+    if (!validCities.includes(formData.city.toLowerCase())) {
+      setError('Please enter a valid city within New York City.');
+      return;
+    }
 
-    if (formData.city.toLowerCase() !== 'new york' || formData.state.toLowerCase() !== 'ny') {
-      setError('Shipping is only available to New York.');
+    if (formData.state.toLowerCase() !== 'ny') {
+      setError('Shipping is only available to New York state.');
       return;
     }
 
@@ -61,7 +80,7 @@ const Checkout = ({ onCancel }) => {
       await stripe.redirectToCheckout({ sessionId: id });
     } catch (error) {
       console.error("Error creating checkout session:", error);
-      setError("No se pudo crear la sesión de pago. Inténtalo nuevamente.");
+      setError("Could not create a checkout session. Please try again.");
     }
   };
 
