@@ -4,8 +4,8 @@ import { loadStripe } from '@stripe/stripe-js';
 import styles from './Checkout.module.css';
 
 // Cambia manualmente entre TEST y LIVE aquí
-const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY_TEST); // Cambia a VITE_STRIPE_PUBLIC_KEY_LIVE cuando sea necesario
-console.log("Using Test Mode Key for Stripe Initialization:", import.meta.env.VITE_STRIPE_PUBLIC_KEY_TEST);
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY); // Cambia a VITE_STRIPE_PUBLIC_KEY_LIVE cuando sea necesario
+/* console.log("Using Test Mode Key for Stripe Initialization:", import.meta.env.VITE_STRIPE_PUBLIC_KEY_TEST); */
 
 const Checkout = ({ onCancel }) => {
   const { cartItems, getTotalPrice } = useContext(CartContext);
@@ -23,8 +23,8 @@ const Checkout = ({ onCancel }) => {
   };
 
   const handlePlaceOrder = async () => {
-    console.log("Cart Items being sent to backend:", cartItems);
-    console.log("Form Data being sent:", formData);
+    /* console.log("Cart Items being sent to backend:", cartItems);
+    console.log("Form Data being sent:", formData); */
 
     if (formData.city.toLowerCase() !== 'new york' || formData.state.toLowerCase() !== 'ny') {
       setError('Shipping is only available to New York.');

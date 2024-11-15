@@ -29,11 +29,11 @@
     overflow: hidden; /* Asegura que el contenido extra se recorte */
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1000px) {
     .carouselContainer {
         width: 100vw; /* Full width on mobile */
         height: 50vh; /* Adjust height for mobile */
-        overflow: hidden;
+        overflow:hidden;
     }
 
     .image {

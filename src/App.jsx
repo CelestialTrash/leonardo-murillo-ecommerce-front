@@ -10,7 +10,7 @@ import CancelPage from './pages/CancelPage';
 import './styles/index.css';
 
 // Carga de la clave pública de Stripe
-const stripePromise = loadStripe('YOUR_PUBLISHABLE_KEY'); // Reemplaza 'YOUR_PUBLISHABLE_KEY' con tu clave pública de Stripe
+const stripePromise = loadStripe('VITE_STRIPE_PUBLIC_KEY_TEST'); // Reemplaza 'YOUR_PUBLISHABLE_KEY' con tu clave pública de Stripe
 
 function App() {
   return (

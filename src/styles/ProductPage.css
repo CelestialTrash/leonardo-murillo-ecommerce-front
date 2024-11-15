@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: row;
     height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .carousel-container {
@@ -19,6 +19,7 @@
     height: 100vh;
     padding: 2rem;
     position: relative;
+    
 }
 
 /* Contenedor sticky para ProductInfo y CartButton */
@@ -33,23 +34,27 @@
 }
 
 /* Mobile Styles */
-@media (max-width: 767px) {
+@media (max-width: 1000px) {
     .product-page-container {
         flex-direction: column;
+        width: 100vw;
         height: auto;
         overflow-y: hidden;
+        overflow-x: hidden;
     }
 
     .carousel-container {
         width: 100vw;
-        height: 50vh;
+        overflow-x: hidden;
     }
 
     .rightPanel {
         width: 100vw;
-        padding: 1rem;
+        height: 100vh;
+        padding-right: 1rem;
         gap: 1rem;
         overflow-y: auto;
         max-height: 50vh;
+        overflow-x: hidden;
     }
 }

@@ -35,3 +35,30 @@
     min-width: 10px;
     height: 15px;
 }
+
+
+@media (max-width: 1000px) {
+
+    .cartButton {
+        width: 50px;
+        height: 50px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        margin-top: 1.2rem;
+        top:0rem; /* Alineado con la parte superior */
+        right: 2rem; /* Alinea el padding horizontal con otros componentes */
+    }
+    .cartIcon {
+        width: 28px;
+        height: 28px;
+        filter: invert(); 
+        
+    }
+
+}
+
