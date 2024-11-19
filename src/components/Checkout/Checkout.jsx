@@ -28,6 +28,7 @@ const Checkout = ({ onCancel }) => {
   const { cartItems, getTotalPrice } = useContext(CartContext);
   const [formData, setFormData] = useState({
     name: '',
+    email: '', // Campo de correo agregado
     address: '',
     city: '',
     state: '',
@@ -47,6 +48,11 @@ const Checkout = ({ onCancel }) => {
 
     if (formData.state.toLowerCase() !== 'ny') {
       setError('Shipping is only available to New York state.');
+      return;
+    }
+
+    if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) {
+      setError('Please enter a valid email address.');
       return;
     }
 
@@ -102,6 +108,14 @@ const Checkout = ({ onCancel }) => {
           name="name"
           placeholder="Full Name"
           value={formData.name}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          value={formData.email}
           onChange={handleChange}
           required
         />
