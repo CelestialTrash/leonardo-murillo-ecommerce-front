@@ -20,7 +20,7 @@ const ProductCarousel = ({ images = [] }) => {
           delay: 10000,
           disableOnInteraction: false,
         }}
-        navigation
+        navigation 
         pagination={{ clickable: true }}
         effect="fade"
         fadeEffect={{ crossFade: true }}

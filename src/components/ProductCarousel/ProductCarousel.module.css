@@ -10,6 +10,7 @@
     align-items: center;
     justify-content: center;
     margin: 0; /* Elimina cualquier margen en el contenedor */
+    
 }
 
 /* Configuración de cada slide */
@@ -19,6 +20,7 @@
     align-items: center;
     width: 100%; /* Ocupa el ancho completo del contenedor */
     height: 100%; /* Ocupa el alto completo del contenedor */
+   
 }
 
 /* Configuración de la imagen dentro de cada slide */

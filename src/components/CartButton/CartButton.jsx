@@ -2,8 +2,9 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
 import styles from './CartButton.module.css';
-import cartIcon from '../../assets/cart-basket-ecommerce-svgrepo-com.svg';
+import cartIcon from '../../assets/bag-empty.svg';
 import closeIcon from '../../assets/close-svgrepo-com.svg'
+
 
 const CartButton = ({ onClick, isCartOpen }) => {
   const { cartItemCount } = useContext(CartContext);
