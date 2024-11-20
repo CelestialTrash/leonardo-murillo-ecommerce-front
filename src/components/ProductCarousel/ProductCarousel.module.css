@@ -34,13 +34,22 @@
 @media (max-width: 1000px) {
     .carouselContainer {
         width: 100vw; /* Full width on mobile */
-        height: 50vh; /* Adjust height for mobile */
+        height: 100vh; /* Adjust height for mobile */
         overflow:hidden;
+    }
+    .slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%; /* Ocupa el ancho completo del contenedor */
+        height: 100%; /* Ocupa el alto completo del contenedor */
+        overflow: hidden;
     }
 
     .image {
         width: 100vw; /* Full width */
-        height: 50vh; /* Match container height */
+        height: 100vh; /* Match container height */
         object-fit: cover;
+        overflow: hidden;
     }
 }
