@@ -3,7 +3,7 @@
     background-color: white;
     width: 30vw; /* Ajusta el ancho al 30% de la ventana */
     height: 100vh; /* Asegura que ocupe el alto completo */
-   
+    padding: 0px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
@@ -16,11 +16,10 @@
     .rightPanel {
         width: 100vw; /* Full width on mobile */
         height: 100vh;
-        padding: 20px; /* Reduced padding for smaller screens */
-        gap: 1rem; /* Adjusted gap between elements */
         box-shadow: none; /* Remove shadow for simplicity on mobile */
-        overflow-y: auto; /* Permite scroll interno si es necesario */
-        overflow-x:hidden;
+        overflow-y:scroll; /* Permite scroll interno si es necesario */
+        padding: 0px;
+        
     }
 
 }
