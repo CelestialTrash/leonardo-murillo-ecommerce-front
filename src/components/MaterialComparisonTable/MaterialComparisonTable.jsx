@@ -12,14 +12,14 @@ const MaterialComparisonTable = ({ materialComparison }) => {
       <table className={styles.comparisonTable}>
         <thead>
           <tr>
-            <th>Aluminum</th>
+            <th className={styles.comparisonTableAluminum}>Aluminum</th>
             <th>Stainless Steel</th>
           </tr>
         </thead>
         <tbody>
           {materialComparison.map((row, index) => (
             <tr key={index}>
-              <td>{row.aluminum}</td>
+              <td className={styles.aluminun}>{row.aluminum}</td>
               <td>{row.stainlessSteel}</td>
             </tr>
           ))}

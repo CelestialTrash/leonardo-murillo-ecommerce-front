@@ -1,32 +1,44 @@
 .tableContainer {
-    padding: 2rem; /* Match padding with other components */
-    border: 1px solid #ddd;
+    padding:32px; /* Match padding with other components */
     border-radius: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
+    
+    
 }
 
 .comparisonTable {
     width: 100%;
     border-collapse: collapse;
-    text-align: center; /* Center text in table */
+    text-align: center; /* Center text in table */ 
+   
+}
+.comparisonTableAluminum {
+    border-right: 1px solid #ddd;
 }
 
 .comparisonTable th,
 .comparisonTable td {
     padding: 1rem;
     border-bottom: 1px solid #ddd;
-    font-size: 1rem;
+    font-size: 0.875rem;
     color: #333;
     text-align: center; /* Center text within cells */
     vertical-align: middle; /* Center content vertically */
+    
 }
+
 
 .comparisonTable th {
     font-weight: bold;
+    
 }
 
 .comparisonTable tbody tr:last-child td {
     border-bottom: none; /* Remove border from last row */
+    
+}
+.aluminun {
+    border-right: #ddd solid 1px;
 }

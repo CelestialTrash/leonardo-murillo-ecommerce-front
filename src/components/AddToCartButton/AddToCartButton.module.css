@@ -3,7 +3,7 @@
     width: calc(42% * 2 + 20px); /* Adjust width to match the combined width of two smaller buttons plus some gap */
     max-width: 100%; /* Ensure it doesn’t exceed container width */
     padding: 15px 0; /* Vertical padding for prominence */
-    font-size: 1.2rem; /* Font size for the button text */
+    font-size:0.875rem;; /* Font size for the button text */
     font-weight: 500; /* Slightly bolder text */
     background-color: #804000; /* Brown background color */
     color: white; /* White text color */
@@ -13,6 +13,7 @@
     transition: background-color 0.3s; /* Smooth transition on hover */
     margin: 20px auto 0 auto; /* Center align the button */
     display: block; /* Block display to ensure centering */
+    
 }
 
 .addToCartButton:hover {

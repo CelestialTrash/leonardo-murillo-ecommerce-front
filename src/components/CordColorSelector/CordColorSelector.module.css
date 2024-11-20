@@ -2,13 +2,13 @@
 .cordColorSelector {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 2rem; /* Consistent padding with other components */
+    
+    padding:32px; /* Consistent padding with other components */
     border-top: 1px solid #ddd;
 }
 
 .cordColorSelector h3 {
-    font-size: 1rem;
+    font-size: 0.875rem;
     font-weight: normal;
     color: #333;
     margin: 0;
@@ -17,15 +17,17 @@
 .colorContainer {
     display: flex;
     gap: 10px;
+    padding-left: 2px;
 }
 
 .colorButton {
-    width: 35px;
-    height: 35px;
+    width: 32px;
+    height: 32px;
     border: 1px solid #333;
     border-radius: 5px;
     cursor: pointer;
     transition: transform 0.2s;
+    
 }
 
 .colorButton:hover {

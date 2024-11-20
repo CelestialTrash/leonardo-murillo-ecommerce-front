@@ -3,27 +3,26 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding: 0 2rem; /* Alinea con el padding horizontal de otros componentes */
-    box-sizing: border-box;
+    padding:32px;
     margin-top: 0rem;
 }
 
 .productName {
-    font-size: 4rem;
+    font-size: 3.2rem;
     font-weight: bold;
     margin: 0;
     color: #333;
 }
 
 .productPrice {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 500;
     color: #333;
     margin: 0;
 }
 
 .productDescription {
-    font-size: 1rem;
+    font-size: 0.875rem;
     line-height: 1.6;
     color: #666;
     margin-top: 1rem;

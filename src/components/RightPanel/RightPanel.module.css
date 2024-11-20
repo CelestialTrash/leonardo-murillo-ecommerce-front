@@ -1,9 +1,9 @@
 /* RightPanel.module.css */
 .rightPanel {
     background-color: white;
-    width: 28vw; /* Ajusta el ancho al 30% de la ventana */
+    width: 30vw; /* Ajusta el ancho al 30% de la ventana */
     height: 100vh; /* Asegura que ocupe el alto completo */
-    padding: 20px;
+   
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;

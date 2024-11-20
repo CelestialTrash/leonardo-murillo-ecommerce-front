@@ -30,10 +30,10 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  /* Elimina el scroll horizontal en todo el documento */
+  overflow: hidden;
   margin: 0;
-  
   font-family: "Montserrat";
+  
 }
 
 

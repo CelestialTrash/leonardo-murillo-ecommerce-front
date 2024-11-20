@@ -1,9 +1,8 @@
 .dimensionInfo {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    padding: 2rem; /* Consistent padding with other components */
-    
+    padding:32px; /* Consistent padding with other components */
+    font-size: 0.875rem;
 }
 
 .tabs {
@@ -15,7 +14,7 @@
 
 .tabs h4 {
     margin: 0;
-    padding: 0.5rem 1rem;
+    padding: 0.1rem 1rem;
     cursor: pointer;
     font-weight: normal;
     color: #333;
@@ -30,8 +29,9 @@
 }
 
 .content {
-    padding: 1rem 1rem; /* Consistent padding with other component's content */
+    padding:0; /* Consistent padding with other component's content */
     color: #333;
+    font-size: 0.875rem;
 }
 
 .tabContent {
