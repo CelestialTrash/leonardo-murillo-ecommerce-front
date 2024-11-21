@@ -49,15 +49,16 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        position: absolute;
+        position: relative;
         margin-top: 1.2rem;
         top:0rem; /* Alineado con la parte superior */
-        right: 2rem; /* Alinea el padding horizontal con otros componentes */
+        right: 0rem; /* Alinea el padding horizontal con otros componentes */
     }
     .cartIcon {
         width: 28px;
         height: 28px;
-        filter: invert(); 
+        
+      
         
     }
 
