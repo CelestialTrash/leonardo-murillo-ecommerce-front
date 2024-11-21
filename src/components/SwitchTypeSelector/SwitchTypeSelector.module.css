@@ -42,3 +42,19 @@
     background-color: #333;
     color: white;
 }
+
+/* Media query for mobile (max-width: 1000px) */
+@media (max-width: 1000px) {
+    /* Disable hover effect for touch devices */
+    .switchButton:hover {
+        background-color: white;
+        color: #333;
+    }
+
+    /* Ensure active button state is visually distinct */
+    .switchButton:active,
+    .active {
+        background-color: #333;
+        color: white;
+    }
+}
