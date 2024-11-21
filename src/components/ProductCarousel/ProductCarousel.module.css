@@ -34,7 +34,7 @@
 @media (max-width: 1000px) {
     .carouselContainer {
         width: 100vw; /* Full width on mobile */
-        height: 100vh; /* Adjust height for mobile */
+        height: 100%; /* Adjust height for mobile */
         overflow:hidden;
     }
     .slide {
@@ -47,9 +47,9 @@
     }
 
     .image {
-        width: 100vw; /* Full width */
-        height: 100vh; /* Match container height */
-        object-fit: cover;
+        width: 100%; /* Full width */
+        height: 100%; /* Match container height */
+        object-fit:fill;
         overflow: hidden;
     }
 }

@@ -15,7 +15,7 @@
 @media (max-width: 1000px) {
     .rightPanel {
         width: 100vw; /* Full width on mobile */
-        height: 100vh;
+        height: 100%;
         box-shadow: none; /* Remove shadow for simplicity on mobile */
         overflow-y:scroll; /* Permite scroll interno si es necesario */
         padding: 0px;
