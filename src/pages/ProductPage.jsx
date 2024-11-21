@@ -100,14 +100,14 @@ const ProductPage = () => {
       </div>
       <RightPanel>
         <div className="header-with-cart">
+          <CartButton onClick={toggleCart} isCartOpen={showCart} />
           {!showCart && !showCheckout && (
             <ProductInfo
-              name={productInfo.name}
-              price={selectedMaterial?.price || 0}
-              description={productInfo.description}
+            name={productInfo.name}
+            price={selectedMaterial?.price || 0}
+            description={productInfo.description}
             />
           )}
-          <CartButton onClick={toggleCart} isCartOpen={showCart} />
         </div>
 
         {showCheckout && <Checkout onCancel={cancelCheckout} />}

@@ -1,17 +1,18 @@
 /* CartButton.module.css */
 .cartButton {
-    width: 58px;
+    width:95%;
     height: 50px;
     background: none;
-    border: none;
+   
     cursor: pointer;
-    display: flex;
+    display:flex;
     align-items: center;
-    justify-content: center;
-    position: absolute;
-    margin-top: 1.2rem;
-    top:0; /* Alineado con la parte superior */
-    right: 2rem; /* Alinea el padding horizontal con otros componentes */
+    justify-content: flex-end;
+    position: relative;
+    
+    top:2.3rem; /* Alineado con la parte superior */
+    right: 0rem; /* Alinea el padding horizontal con otros componentes */
+    z-index: 1000;
 }
 
 .cartIcon {
@@ -41,17 +42,17 @@
 @media (max-width: 1000px) {
 
     .cartButton {
-        width: 50px;
+        width: 95%;
         height: 50px;
         background: none;
         border: none;
         cursor: pointer;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-end;
         position: relative;
-        margin-top: 1.2rem;
-        top:0rem; /* Alineado con la parte superior */
+
+        top:2rem; /* Alineado con la parte superior */
         right: 0rem; /* Alinea el padding horizontal con otros componentes */
     }
     .cartIcon {
@@ -60,6 +61,21 @@
         
       
         
+    }
+    .itemCount {
+        position: absolute;
+        top: 2px;
+        right: -2px;
+        color: rgb(0, 0, 0);
+        background-color: rgb(255, 255, 255);
+        border-radius: 50%;
+        padding: 0.2rem 0.4rem;
+        font-size: 0.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 10px;
+        height: 15px;
     }
 
 }

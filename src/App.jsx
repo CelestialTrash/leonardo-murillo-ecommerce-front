@@ -7,6 +7,7 @@ import { loadStripe } from '@stripe/stripe-js';
 import ProductPage from './pages/ProductPage';
 import SuccessPage from './pages/SuccessPage';
 import CancelPage from './pages/CancelPage';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import './styles/index.css';
 
 // Carga de la clave pública de Stripe
@@ -16,6 +17,7 @@ function App() {
   return (
     <Elements stripe={stripePromise}>
       <Router>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<ProductPage />} />
           <Route path="/success" element={<SuccessPage />} />

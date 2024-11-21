@@ -1,5 +1,6 @@
 // MaterialSelector.jsx
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'; // Importar Link de React Router
 import styles from './MaterialSelector.module.css';
 
 const MaterialSelector = ({ materials, onMaterialSelect }) => {
@@ -33,9 +34,13 @@ const MaterialSelector = ({ materials, onMaterialSelect }) => {
           </button>
         ))}
       </div>
-      <a href="#" className={styles.materialLink}>See materials comparison</a>
+      {/* Usamos Link para apuntar al ID del componente MaterialComparisonTable */}
+      <Link to="#materials-comparison" className={styles.materialLink}>
+        See materials comparison
+      </Link>
     </div>
   );
 };
 
 export default MaterialSelector;
+

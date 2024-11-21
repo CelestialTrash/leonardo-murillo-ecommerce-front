@@ -27,7 +27,7 @@
     position: sticky;
     top: 0; /* Se mantiene en la parte superior del RightPanel */
     z-index: 10; /* Asegura que esté encima de otros elementos */
-    background-color: white; /* Fondo para evitar solapamiento visual */
+    background-color: #ffffff; /* Fondo para evitar solapamiento visual */
     display: flex;
     justify-content: space-between; /* Alinea ProductInfo y CartButton */
     padding-right: 2rem; /* Alineación horizontal uniforme */

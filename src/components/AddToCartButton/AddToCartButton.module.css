@@ -11,7 +11,7 @@
     border-radius: 8px; /* Rounded corners */
     cursor: pointer;
     transition: background-color 0.3s; /* Smooth transition on hover */
-    margin: 20px auto 0 auto; /* Center align the button */
+    margin: 0px auto 0 auto; /* Center align the button */
     display: block; /* Block display to ensure centering */
     
 }

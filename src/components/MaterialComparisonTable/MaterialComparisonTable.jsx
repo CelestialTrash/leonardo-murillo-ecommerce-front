@@ -8,7 +8,7 @@ const MaterialComparisonTable = ({ materialComparison }) => {
   }
 
   return (
-    <div className={styles.tableContainer}>
+    <div id="materials-comparison"  className={styles.tableContainer}>
       <table className={styles.comparisonTable}>
         <thead>
           <tr>

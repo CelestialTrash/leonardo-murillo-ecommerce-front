@@ -1,7 +1,9 @@
 .dimensionInfo {
     display: flex;
     flex-direction: column;
-    padding:32px; /* Consistent padding with other components */
+    padding-left:32px;
+    padding-right:32px;
+    padding-top:32px; /* Consistent padding with other components */
     font-size: 0.875rem;
 }
 
