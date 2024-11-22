@@ -31,6 +31,13 @@
     overflow: hidden; /* Asegura que el contenido extra se recorte */
 }
 
+
+/* .swiper-button-next::after {
+    color: rgb(0, 0, 0);
+}
+ */
+
+
 @media (max-width: 1000px) {
     .carouselContainer {
         width: 100vw; /* Full width on mobile */

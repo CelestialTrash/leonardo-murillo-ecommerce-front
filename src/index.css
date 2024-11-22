@@ -63,6 +63,27 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 } */
 
+.swiper-button-next::after {
+  color: rgb(255, 255, 255);
+}
+
+.swiper-button-prev::after {
+  color: rgb(255, 255, 255);
+}
+
+.swiper-pagination-bullet {
+  color: rgb(126, 0, 0);
+}
+
+.swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal{
+  color: rgb(126, 0, 0);
+  
+}
+
+.swiper-pagination-bullet swiper-pagination-bullet-active {
+  color: rgb(126, 0, 0);
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

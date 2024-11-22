@@ -62,11 +62,11 @@
 
 @media (max-width: 1000px) {
     /* Disable hover effect for touch devices */
-   /*  .materialButton:hover {
+    .materialButton:hover {
         background-color: white;
         color: #333;
     }
- */
+
     /* Make the active state more prominent */
     .materialButton:active,
     .active {
