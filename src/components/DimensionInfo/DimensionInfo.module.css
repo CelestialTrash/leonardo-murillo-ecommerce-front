@@ -10,13 +10,14 @@
 .tabs {
     display: flex;
     border-bottom: 1px solid #ddd;
-    padding-left: 1rem; /* Align with other component's padding */
-    padding-right: 1rem; /* Align with other component's padding */
+    padding-left: 0rem; /* Align with other component's padding */
+    padding-right: 0rem; /* Align with other component's padding */
 }
 
 .tabs h4 {
     margin: 0;
-    padding: 0.1rem 1rem;
+    padding: 8px 1rem;
+    
     cursor: pointer;
     font-weight: normal;
     color: #333;
@@ -26,8 +27,14 @@
 
 .activeTab {
     font-weight: bold;
-    border-bottom: 2px solid black; /* Highlight active tab */
+    border-bottom: 1px solid black; /* Highlight active tab */
     color: #333;
+   
+    
+   
+
+    
+    
 }
 
 .content {
@@ -40,4 +47,14 @@
     display: block;
     padding-left: 1rem; /* Align content with previous components */
     padding-right: 1rem; /* Align content with previous components */
+}
+
+
+
+@media (max-width: 1000px) {
+    .dimensionInfo {
+        padding: 16px;
+        
+
+    }
 }

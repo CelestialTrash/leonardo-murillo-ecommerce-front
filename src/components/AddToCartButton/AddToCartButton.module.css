@@ -1,4 +1,8 @@
-/* AddToCartButton.module.css */
+
+.container {
+    padding-bottom: 16px;
+}
+
 .addToCartButton {
     width: calc(42% * 2 + 20px); /* Adjust width to match the combined width of two smaller buttons plus some gap */
     max-width: 100%; /* Ensure it doesn’t exceed container width */
@@ -18,4 +22,19 @@
 
 .addToCartButton:hover {
     background-color: #603000; /* Darker shade on hover */
+}
+
+
+@media (max-width: 1000px) {
+    .addToCartButton {
+        padding: 16px;
+        width: 92.5%;
+
+    }
+
+
+.container {
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
 }

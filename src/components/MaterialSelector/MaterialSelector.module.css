@@ -4,7 +4,8 @@
     flex-direction: column;
     gap: 10px;
     padding:32px;; /* Ensure padding is consistent with ProductInfo */
-    border-top: 1px solid #ddd;
+    padding-top: 16px;
+    padding-bottom: 16px;
 }
 
 .materialSelector h3 {
@@ -12,12 +13,15 @@
     font-weight: normal;
     color: #333;
     margin: 0;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 8px;
 }
 
 .buttonContainer {
     display: flex;
     gap: 10px;
     width: 100%;
+    padding-top: 4px;
 }
 
 .materialButton {
@@ -49,7 +53,10 @@
     color: #333;
     text-decoration: underline;
     cursor: pointer;
-    margin-top: 10px;
+    padding-top:8px;
+    padding-left: 1px;
+    
+    
 }
 
 /* Ensure consistent alignment with ProductInfo */
@@ -61,6 +68,11 @@
 }
 
 @media (max-width: 1000px) {
+    .materialSelector {
+        padding: 16px;
+        padding-bottom: 32px;
+    }
+    
     /* Disable hover effect for touch devices */
     .materialButton:hover {
         background-color: white;

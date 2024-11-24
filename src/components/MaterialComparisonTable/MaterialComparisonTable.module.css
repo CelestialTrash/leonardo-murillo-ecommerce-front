@@ -12,6 +12,8 @@
     width: 100%;
     border-collapse: collapse;
     text-align: center; /* Center text in table */ 
+    border:  1px solid #ddd; ; 
+    
    
 }
 .comparisonTableAluminum {
@@ -41,4 +43,13 @@
 }
 .aluminun {
     border-right: #ddd solid 1px;
+}
+
+
+@media (max-width: 1000px) {
+    .tableContainer {
+       padding: 16px;
+        
+    }
+
 }

@@ -2,9 +2,8 @@
 .cordColorSelector {
     display: flex;
     flex-direction: column;
-    
     padding:32px; /* Consistent padding with other components */
-    border-top: 1px solid #ddd;
+    padding-bottom: 36px;
 }
 
 .cordColorSelector h3 {
@@ -12,12 +11,15 @@
     font-weight: normal;
     color: #333;
     margin: 0;
+    padding-bottom: 8px;
 }
 
 .colorContainer {
     display: flex;
     gap: 10px;
     padding-left: 2px;
+    border-top: 1px solid #ddd;
+    padding-top: 4px;
 }
 
 .colorButton {
@@ -39,3 +41,14 @@
     outline: 2px solid #333; /* Adds an outline to indicate the selected color */
     outline-offset: 2px;
 }
+
+
+@media (max-width: 1000px) {
+    .cordColorSelector {
+                padding:16px; /* Consistent padding with other components */
+                padding-bottom: 36px;
+    }
+
+}
+
+

@@ -21,9 +21,12 @@ const AddToCartButton = ({ product, selectedMaterial, selectedColor, selectedSwi
   };
 
   return (
+    <div className={styles.container}>
     <button onClick={handleAddToCart} className={styles.addToCartButton}>
       Add to Cart
     </button>
+
+    </div>
   );
 };
 
