@@ -72,11 +72,11 @@ button:focus-visible {
 }
 
 .swiper-pagination-bullet {
-  color: rgb(126, 0, 0);
+  color: rgb(255, 255, 255);
 }
 
 .swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal{
-  color: rgb(126, 0, 0);
+  color: rgb(255, 255, 255);
   
 }
 
