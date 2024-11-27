@@ -76,24 +76,24 @@ button:focus-visible {
 }
 
 .swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal {
-  color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
 }
 
 .swiper-pagination-bullet {
-  color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
 }
 
 .swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal{
-  color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
   
 }
 
 .swiper-pagination-bullet swiper-pagination-bullet-active {
-  color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
 }
 
 swiper-pagination-bullet swiper-pagination-bullet-active {
-  color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
 }
 
 /* @media (prefers-color-scheme: light) {
