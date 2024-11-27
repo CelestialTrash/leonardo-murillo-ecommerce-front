@@ -41,24 +41,9 @@ const Checkout = ({ onCancel }) => {
   };
 
   const handlePlaceOrder = async () => {
-    if (!validCities.includes(formData.city.toLowerCase())) {
-      setError('Please enter a valid city within New York City.');
-      return;
-    }
-
-    if (formData.state.toLowerCase() !== 'ny') {
-      setError('Shipping is only available to New York state.');
-      return;
-    }
-
-    if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) {
-      setError('Please enter a valid email address.');
-      return;
-    }
-
     try {
       const stripe = await stripePromise;
-
+  
       const response = await fetch("https://leonardo-murillo-backend.vercel.app/api/stripe/create-checkout-session", {
         method: "POST",
         headers: {
@@ -73,16 +58,16 @@ const Checkout = ({ onCancel }) => {
             price: item.price,
             quantity: item.quantity,
           })),
-          formData,
+          formData, // Enviar los datos del formulario al backend
         }),
       });
-
+  
       const { id, error: sessionError } = await response.json();
       if (sessionError) {
         setError(sessionError);
         return;
       }
-
+  
       await stripe.redirectToCheckout({ sessionId: id });
     } catch (error) {
       console.error("Error creating checkout session:", error);
