@@ -81,10 +81,10 @@ button:focus-visible {
 }
 
 .swiper-pagination-bullet swiper-pagination-bullet-active {
-  color: rgb(126, 0, 0);
+  color: rgb(255, 255, 255);
 }
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
@@ -96,6 +96,6 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
-
+ */
 
 
