@@ -41,6 +41,13 @@ const Checkout = ({ onCancel }) => {
   };
 
   const handlePlaceOrder = async () => {
+    const validStates = ["new york", "NEW YORK", "NY", "ny"];
+    
+    if (!validStates.includes(formData.state.trim())) {
+      setError("The state must be New York (NY).");
+      return;
+    }
+
     try {
       const stripe = await stripePromise;
   
